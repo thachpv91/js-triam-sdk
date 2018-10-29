@@ -1,7 +1,13 @@
 import {NotFoundError, NetworkError, BadRequestError, BadResponseError} from "./errors";
 
 import {AccountCallBuilder} from "./account_call_builder";
+// thuannd start
+import {ContractStateCallBuilder} from "./contractstate_call_builder";
+// thuannd end
 import {AccountResponse} from "./account_response";
+// thuannd start
+import {ContractStateResponse} from "./contractstate_response";
+// thuannd end
 import {Config} from "./config";
 import {LedgerCallBuilder} from "./ledger_call_builder";
 import {TransactionCallBuilder} from "./transaction_call_builder";
@@ -78,6 +84,16 @@ export class Server {
     accounts() {
         return new AccountCallBuilder(URI(this.serverURL));
     }
+
+// thuannd start
+    /**
+     * Returns new {@link ContractStateCallBuilder} object configured by a current Horizon server configuration.
+     * @returns {ContractStateCallBuilder}
+     */
+    contractstate() {
+        return new ContractStateCallBuilder(URI(this.serverURL));
+    }
+// thuannd end
 
     /**
      * Returns new {@link LedgerCallBuilder} object configured by a current Horizon server configuration.
@@ -212,6 +228,22 @@ export class Server {
                 return new AccountResponse(res);
             });
     }
+
+// thuannd start
+    /**
+    * Fetches an account's most current state in the ledger and then creates and returns an {@link Account} object.
+    * @param {string} contractId - The account to load.
+    * @returns {Promise} Returns a promise to the {@link ContractStateResponse} object with populated sequence number.
+    */
+   getContractState(contractId) {
+    return this.contractstate()
+        .contractId(contractId)
+        .call()
+        .then(function (res) {
+            return new ContractStateResponse(res);
+        });
+}
+// thuannd end
 
     /**
      * 

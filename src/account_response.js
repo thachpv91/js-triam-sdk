@@ -36,6 +36,15 @@ export class AccountResponse {
         return this._baseAccount.sequenceNumber();
     }
 
+// thuannd start
+    /**
+     * @returns {string}
+     */
+    balance() {
+        return this._baseAccount.balance();
+    }
+// thuannd end
+
     /**
      * Increments sequence number in this object by one.
      */
