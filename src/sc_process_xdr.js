@@ -10,6 +10,8 @@ http.createServer(function (req, res) {
 
 
     var txHandler =  JSON.stringify(StellarSdk.xdr.TransactionEnvelope.fromXDR(req.envelope_xdr, 'base64'));
+    console.log(txHandler);
+    
 
 
     res.writeHead(200, {'Content-Type': 'text/html'});

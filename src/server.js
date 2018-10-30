@@ -10,6 +10,9 @@ import {ContractStateResponse} from "./contractstate_response";
 // thuannd end
 import {Config} from "./config";
 import {LedgerCallBuilder} from "./ledger_call_builder";
+// thuannd start
+import {LedgerResponse} from "./ledger_response";
+// thuannd end
 import {TransactionCallBuilder} from "./transaction_call_builder";
 import {OperationCallBuilder} from "./operation_call_builder";
 import {OfferCallBuilder} from "./offer_call_builder";
@@ -236,13 +239,26 @@ export class Server {
     * @returns {Promise} Returns a promise to the {@link ContractStateResponse} object with populated sequence number.
     */
    getContractState(contractId) {
-    return this.contractstate()
-        .contractId(contractId)
-        .call()
-        .then(function (res) {
-            return new ContractStateResponse(res);
-        });
+        return this.contractstate()
+            .contractId(contractId)
+            .call()
+            .then(function (res) {
+                return new ContractStateResponse(res);
+            });
 }
+
+    /**
+    * Fetches an account's most current state in the ledger and then creates and returns an {@link Ledger} object.
+    * @returns {Promise} Returns a promise to the {@link LedgerResponse} object with populated sequence number.
+    */
+    getLastLedger() {
+        return this.ledgers()
+            .ledger()
+            .call()
+            .then(function (res) {
+                return new LedgerResponse(res);
+            });
+    }
 // thuannd end
 
     /**

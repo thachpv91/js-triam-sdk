@@ -26,13 +26,13 @@ export class ContractStateResponse {
      * @returns {string}
      */
     contractId() {
-        return this._baseAccount.contractId();
+        return this._baseContract.contractId();
     }
 
     /**
      * @returns {string}
      */
     state() {
-        return this._baseAccount.state();
+        return this._baseContract.state();
     }
 }

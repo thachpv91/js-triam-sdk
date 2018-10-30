@@ -14,7 +14,7 @@ import forIn from "lodash/forIn";
  */
 export class AccountResponse {
     constructor(response) {
-        this._baseAccount = new BaseAccount(response.account_id, response.sequence);
+        this._baseAccount = new BaseAccount(response.account_id, response.sequence, response.balance);
         // Extract response fields
         forIn(response, (value, key) => {
             this[key] = value;
