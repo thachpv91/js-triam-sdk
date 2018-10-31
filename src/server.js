@@ -232,35 +232,6 @@ export class Server {
             });
     }
 
-// thuannd start
-    /**
-    * Fetches an account's most current state in the ledger and then creates and returns an {@link Account} object.
-    * @param {string} contractId - The account to load.
-    * @returns {Promise} Returns a promise to the {@link ContractStateResponse} object with populated sequence number.
-    */
-   getContractState(contractId) {
-        return this.contractstate()
-            .contractId(contractId)
-            .call()
-            .then(function (res) {
-                return new ContractStateResponse(res);
-            });
-}
-
-    /**
-    * Fetches an account's most current state in the ledger and then creates and returns an {@link Ledger} object.
-    * @returns {Promise} Returns a promise to the {@link LedgerResponse} object with populated sequence number.
-    */
-    getLastLedger() {
-        return this.ledgers()
-            .ledger()
-            .call()
-            .then(function (res) {
-                return new LedgerResponse(res);
-            });
-    }
-// thuannd end
-
     /**
      * 
      * @param {Asset} base base aseet

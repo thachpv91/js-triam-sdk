@@ -14,7 +14,7 @@ import forIn from "lodash/forIn";
  */
 export class AccountResponse {
     constructor(response) {
-        this._baseAccount = new BaseAccount(response.account_id, response.sequence, response.balance);
+        this._baseAccount = new BaseAccount(response.account_id, response.sequence);
         // Extract response fields
         forIn(response, (value, key) => {
             this[key] = value;
@@ -35,15 +35,6 @@ export class AccountResponse {
     sequenceNumber() {
         return this._baseAccount.sequenceNumber();
     }
-
-// thuannd start
-    /**
-     * @returns {string}
-     */
-    balance() {
-        return this._baseAccount.balance();
-    }
-// thuannd end
 
     /**
      * Increments sequence number in this object by one.

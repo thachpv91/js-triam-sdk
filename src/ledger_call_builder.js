@@ -26,16 +26,4 @@ export class LedgerCallBuilder extends CallBuilder {
         return this;
     }
 
-// thuannd start
-    /**
-     * Provides information on a single ledger.
-     * @param {number|string} sequence Ledger sequence
-     * @returns {LedgerCallBuilder}
-     */
-    ledger() {
-        this.filter.push(['ledgers', ""]);
-        return this;
-    }
-// thuannd end
-
 }
