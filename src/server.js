@@ -1,18 +1,9 @@
 import {NotFoundError, NetworkError, BadRequestError, BadResponseError} from "./errors";
 
 import {AccountCallBuilder} from "./account_call_builder";
-// thuannd start
-import {ContractStateCallBuilder} from "./contractstate_call_builder";
-// thuannd end
 import {AccountResponse} from "./account_response";
-// thuannd start
-import {ContractStateResponse} from "./contractstate_response";
-// thuannd end
 import {Config} from "./config";
 import {LedgerCallBuilder} from "./ledger_call_builder";
-// thuannd start
-import {LedgerResponse} from "./ledger_response";
-// thuannd end
 import {TransactionCallBuilder} from "./transaction_call_builder";
 import {OperationCallBuilder} from "./operation_call_builder";
 import {OfferCallBuilder} from "./offer_call_builder";
