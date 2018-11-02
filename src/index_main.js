@@ -1,20 +1,4 @@
-'use strict'
-
-const express = require('express')
-const app = express()
-
-const PORT = process.env.PORT || 3000
-
-function capitalize (str) {
-  const firstLetter = str.charAt(0) // we can check what's inside here
-  return `${firstLetter.toUpperCase()}${str.slice(1)}`
-}
-
-app.get('/:name?', (req, res) => {
-  const name = req.params.name ? capitalize(req.params.name) : 'World'
-/////////////
-// var StellarSdk = require('stellar-sdk');
-var StellarSdk = require('../src/index');
+var StellarSdk = require('./index');
 StellarSdk.Network.useTestNetwork();
 var server = new StellarSdk.Server('https://horizon-testnet.stellar.org');
 //var server = new StellarSdk.Server('http://127.0.0.1:8000');
@@ -25,9 +9,10 @@ var destinationId = 'GA2C5RFPE6GCKMY3US5PAB6UZLKIGSPIUKSLRB6Q723BM2OARMDUYEJ5';
 // Transaction will hold a built transaction we can resubmit if the result is unknown.
 var transaction;
 
-let data;
-data.funcName = "add";
-data.contractParams = ["5","6"];
+var data = {
+  'funcName': "add",
+  'contractParams' : ["5", "6"]
+};
 
 // First, check to make sure that the destination account exists.
 // You could skip this, but if the account does not exist, you will be charged
@@ -50,7 +35,7 @@ server.loadAccount(destinationId)
       .addOperation(StellarSdk.Operation.createContract({
         startingBalance: "10",
         contractAddr: "http://172.16.0.199:3000/hello.txt",
-        data: this.data
+        data: data
       }))
       // A memo allows you to add your own metadata to a transaction. It's
       // optional and does not affect how Stellar treats the transaction.
@@ -70,8 +55,3 @@ server.loadAccount(destinationId)
     // already built transaction:
     // server.submitTransaction(transaction);
   });
-/////////////
-  res.send(`Hello ${name}!`)
-})
-
-app.listen(PORT, () => console.log(`App listening on *:${PORT}`))
