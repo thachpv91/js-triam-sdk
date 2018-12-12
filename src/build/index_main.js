@@ -2,7 +2,7 @@
 
 var StellarSdk = require('./index');
 StellarSdk.Network.useTestNetwork();
-var server = new StellarSdk.Server('http://172.16.0.199:8000', {allowHttp: true, timeout: 100000000000000});
+var server = new StellarSdk.Server('http://172.16.0.199:8000', {allowHttp: true});
 
 //var server = new StellarSdk.Server('http://127.0.0.1:8000');
 
@@ -41,6 +41,11 @@ server.loadAccount(destinationId)
     contractAddr: "http://172.16.0.199:3000/hello.txt",
     data: data
   }))
+  // .addOperation(StellarSdk.Operation.sendAsset({
+  //   contractId: "GASOCNHNNLYFNMDJYQ3XFMI7BYHIOCFW3GJEOWRPEGK2TDPGTG2E5EDW",
+  //   asset: StellarSdk.Asset.native(),
+  //   amount: "10.50",  // 100.50 XLM
+  // }))
   // .addOperation(StellarSdk.Operation.payment({
   //   destination: "GASOCNHNNLYFNMDJYQ3XFMI7BYHIOCFW3GJEOWRPEGK2TDPGTG2E5EDW",
   //   asset: StellarSdk.Asset.native(),
