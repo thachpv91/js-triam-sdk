@@ -14,7 +14,7 @@ export class CoreConnection {
     * @returns {string} balance
     */
    getBalance(accountId) {
-        return https.get('http://localhost:11626/getbalance?id=' + accountId, (resp) => {
+        return https.get('http://localhost:11626/balance?id=' + accountId, (resp) => {
             var myJSON = JSON.stringify(resp);
             obj = JSON.parse(myJSON);
 
@@ -31,7 +31,7 @@ export class CoreConnection {
     * @returns {string} state
     */
    getState(contractId) {
-        return https.get('http://localhost:11626/getstate?id=' + contractId, (resp) => {
+        return https.get('http://localhost:11626/contract?id=' + contractId, (resp) => {
             var myJSON = JSON.stringify(resp);
             obj = JSON.parse(myJSON);
 
@@ -49,7 +49,7 @@ export class CoreConnection {
 
    getLedger() {
 
-    return https.get('http://localhost:11626', (resp) => {
+    return https.get('http://localhost:11626/ledger', (resp) => {
         var myJSON = JSON.stringify(resp);
         obj = JSON.parse(myJSON);
 

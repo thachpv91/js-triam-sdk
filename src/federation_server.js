@@ -3,7 +3,7 @@ import URI from 'urijs';
 import isString from "lodash/isString";
 import pick from "lodash/pick";
 import {Config} from "./config";
-import {Account, StrKey} from 'stellar-base';
+import {Account, StrKey} from 'triarm-base-sc';
 import {BadResponseError} from './errors';
 import {StellarTomlResolver} from "./stellar_toml_resolver";
 

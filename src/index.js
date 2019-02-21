@@ -9,13 +9,13 @@ export {FederationServer, FEDERATION_RESPONSE_MAX_SIZE} from "./federation_serve
 export {StellarTomlResolver, STELLAR_TOML_MAX_SIZE} from "./stellar_toml_resolver";
 export {CoreConnection} from "./core_connection";
 
-export {Interface} from "./sc_interface";
-export {constructorMethod} from "./sc_interface";
-export {mainMethod} from "./sc_interface";
-export {fallbackMethod} from "./sc_interface";
+// export {Interface} from "./sc_interface";
+// export {constructorMethod} from "./sc_interface";
+// export {mainMethod} from "./sc_interface";
+// export {fallbackMethod} from "./sc_interface";
 
-// expose classes and functions from stellar-base
-export * from "stellar-base";
+// expose classes and functions from triarm-base-sc
+export * from "triarm-base-sc";
 
 export default module.exports;
 
