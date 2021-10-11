@@ -15,7 +15,7 @@ import {EffectCallBuilder} from "./effect_call_builder";
 import {FriendbotBuilder} from "./friendbot_builder";
 import {AssetsCallBuilder} from "./assets_call_builder";
 import { TradeAggregationCallBuilder } from "./trade_aggregation_call_builder";
-import {xdr} from "triarm-base-sc";
+import {xdr} from "asset-base";
 import isString from "lodash/isString";
 
 let axios = require("axios");
@@ -79,15 +79,6 @@ export class Server {
         return new AccountCallBuilder(URI(this.serverURL));
     }
 
-// thuannd start
-    /**
-     * Returns new {@link ContractStateCallBuilder} object configured by a current Horizon server configuration.
-     * @returns {ContractStateCallBuilder}
-     */
-    contractstate() {
-        return new ContractStateCallBuilder(URI(this.serverURL));
-    }
-// thuannd end
 
     /**
      * Returns new {@link LedgerCallBuilder} object configured by a current Horizon server configuration.
@@ -224,7 +215,7 @@ export class Server {
     }
 
     /**
-     * 
+     *
      * @param {Asset} base base aseet
      * @param {Asset} counter counter asset
      * @param {long} start_time lower time boundary represented as millis since epoch

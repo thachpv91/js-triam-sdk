@@ -3,7 +3,7 @@ import URI from 'urijs';
 import isString from "lodash/isString";
 import pick from "lodash/pick";
 import {Config} from "./config";
-import {Account, StrKey} from 'triarm-base-sc';
+import {Account, StrKey} from 'asset-base';
 import {BadResponseError} from './errors';
 import {StellarTomlResolver} from "./stellar_toml_resolver";
 
@@ -35,7 +35,7 @@ export class FederationServer {
     this.timeout = Config.getTimeout();
     if (typeof opts.timeout === 'number') {
       this.timeout = opts.timeout;
-    } 
+    }
 
     if (this.serverURL.protocol() != 'https' && !allowHttp) {
       throw new Error('Cannot connect to insecure federation server');

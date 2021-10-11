@@ -2,4 +2,4 @@
 
 module.exports = require("./index");
 module.exports.axios = require("axios");
-module.exports.StellarBase = require("triarm-base-sc");
+module.exports.StellarBase = require("asset-base");

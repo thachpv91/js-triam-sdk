@@ -1,4 +1,4 @@
-import {Account as BaseAccount} from "triarm-base-sc";
+import {Account as BaseAccount} from "asset-base";
 import forIn from "lodash/forIn";
 
 /**
