@@ -1,1 +1,1 @@
-TRIAM Smart Contract js sdk
+TriamNetwork JS SDK 
