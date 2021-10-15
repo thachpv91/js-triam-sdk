@@ -1,6 +1,6 @@
 {
   "name": "triam-sdk",
-  "version": "0.2.0",
+  "version": "2.0.0",
   "description": "Triam-sdk is a library for working with the Triam Horizon server.",
   "main": "lib/index.js",
   "scripts": {
