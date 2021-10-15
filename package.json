@@ -1,7 +1,7 @@
 {
-  "name": "asset-sdk",
-  "version": "0.0.1",
-  "description": "stellar-sdk is a library for working with the Stellar Horizon server.",
+  "name": "triam-sdk",
+  "version": "0.2.0",
+  "description": "Triam-sdk is a library for working with the Triam Horizon server.",
   "main": "lib/index.js",
   "scripts": {
     "test": "babel-node ./node_modules/.bin/gulp test",
@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/stellar/js-stellar-sdk.git"
+    "url": "https://github.com/triamnetwork/js-triam-sdk.git"
   },
   "engines": {
     "node": ">=6"
@@ -23,9 +23,9 @@
   "author": "Stellar Development Foundation <hello@stellar.org>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/stellar/js-stellar-sdk/issues"
+    "url": "https://github.com/triamnetwork/js-triam-sdk/issues"
   },
-  "homepage": "https://github.com/stellar/js-stellar-sdk",
+  "homepage": "https://github.com/triamnetwork/js-triam-sdk",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "~6.26.3",
